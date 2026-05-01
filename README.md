@@ -35,7 +35,7 @@ Asegúrate de tener instalado:
    # URL base para el frontend (usada en rewrites)
    NEXT_PUBLIC_USERS_API_URL=/api/users
 
-   # URL real de la API REST (Backend)
+   # URL real de la API REST (Backend - abajo se muestra una de ejemplo por motivos de seguridad)
    USERS_API_TARGET=https://tu-api-backend.azurewebsites.net/
    ```
 
@@ -68,7 +68,7 @@ npm run start
 
 ## 🌐 Despliegue
 
-La aplicación esta desplegada en **Vercel** y su enlace es: [https://app-gestion-usuarios-frontend.vercel.app/](https://app-gestion-usuarios-frontend.vercel.app/)
+La aplicación esta desplegada en **Vercel** y su enlace es: [https://mi-app-user-with-next-js.vercel.app/](https://mi-app-user-with-next-js.vercel.app/)
 
 ---
 **Semillero de Investigación de Teleinformática CEET - SENA**

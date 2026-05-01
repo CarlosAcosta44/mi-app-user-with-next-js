@@ -23,7 +23,7 @@ export function useUsers() {
 
   // useMemo evita ordenar de nuevo la lista en cada render si users no cambio.
   const sortedUsers = useMemo(
-    () => [...users].sort((a, b) => a.id - b.id),
+    () => (Array.isArray(users) ? [...users] : []).sort((a, b) => a.id - b.id),
     [users]
   );
 
@@ -34,7 +34,11 @@ export function useUsers() {
 
     try {
       const data = await usersService.getAll();
-      setUsers(data);
+      if (Array.isArray(data)) {
+        setUsers(data);
+      } else {
+        throw new Error("La API no devolvió una lista de usuarios válida.");
+      }
     } catch (caughtError) {
       setError(getApiErrorMessage(caughtError));
     } finally {
